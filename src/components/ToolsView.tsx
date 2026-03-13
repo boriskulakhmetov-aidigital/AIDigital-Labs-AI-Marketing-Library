@@ -1,22 +1,16 @@
 import { useState } from 'react'
-import type { ToolCategory } from '../types'
-import { TOOLS } from '../data/tools'
+import { getResourcesByType, getToolCategories } from '../data/resources'
 import { ToolCard } from './ToolCard'
 
-const CATEGORIES: ToolCategory[] = [
-  'Audit & Analysis',
-  'Creative & Ideation',
-  'AI Research',
-  'Reporting & Automation',
-]
-
 export function ToolsView() {
-  const [activeCategory, setActiveCategory] = useState<ToolCategory | 'All'>('All')
+  const tools = getResourcesByType('tool')
+  const categories = getToolCategories()
+  const [activeCategory, setActiveCategory] = useState<string | 'All'>('All')
 
   const filtered =
     activeCategory === 'All'
-      ? TOOLS
-      : TOOLS.filter(t => t.category === activeCategory)
+      ? tools
+      : tools.filter(t => t.category === activeCategory)
 
   return (
     <div className="tools-view">
@@ -34,10 +28,10 @@ export function ToolsView() {
           onClick={() => setActiveCategory('All')}
         >
           All Tools
-          <span className="cat-pill__count">{TOOLS.length}</span>
+          <span className="cat-pill__count">{tools.length}</span>
         </button>
-        {CATEGORIES.map(cat => {
-          const count = TOOLS.filter(t => t.category === cat).length
+        {categories.map(cat => {
+          const count = tools.filter(t => t.category === cat).length
           return (
             <button
               key={cat}
@@ -53,7 +47,7 @@ export function ToolsView() {
 
       <div className="tool-grid">
         {filtered.map(tool => (
-          <ToolCard key={tool.id} tool={tool} />
+          <ToolCard key={tool.id} resource={tool} />
         ))}
       </div>
     </div>

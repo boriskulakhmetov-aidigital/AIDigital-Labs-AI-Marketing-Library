@@ -1,8 +1,7 @@
 import { BrandMark } from '../design-system/BrandMark'
 import { ThemeToggle } from '../design-system/ThemeToggle'
 import type { Theme } from '../hooks/useTheme'
-
-type View = 'process' | 'tools'
+import type { View } from '../App'
 
 interface NavbarProps {
   view: View
@@ -27,14 +26,21 @@ export function Navbar({ view, onViewChange, theme, onThemeToggle }: NavbarProps
           onClick={() => onViewChange('process')}
         >
           <span className="view-toggle__icon">🗺️</span>
-          Process Guide
+          <span>Process Guide</span>
         </button>
         <button
           className={`view-toggle__btn ${view === 'tools' ? 'view-toggle__btn--active' : ''}`}
           onClick={() => onViewChange('tools')}
         >
           <span className="view-toggle__icon">🧰</span>
-          Tool Library
+          <span>Tool Library</span>
+        </button>
+        <button
+          className={`view-toggle__btn ${view === 'learning' ? 'view-toggle__btn--active' : ''}`}
+          onClick={() => onViewChange('learning')}
+        >
+          <span className="view-toggle__icon">🎓</span>
+          <span>Learning</span>
         </button>
       </div>
 

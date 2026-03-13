@@ -1,30 +1,30 @@
-export type ToolStatus = 'live' | 'beta' | 'coming-soon'
+/* ════════════════════════════════════════════════════════════
+   Unified Resource Model — single type for tools, courses,
+   workshops, and prompt libraries.
+   ════════════════════════════════════════════════════════════ */
 
-export type ToolCategory =
-  | 'Audit & Analysis'
-  | 'Creative & Ideation'
-  | 'AI Research'
-  | 'Reporting & Automation'
+export type ResourceType = 'tool' | 'course' | 'workshop' | 'prompt-library'
+export type ResourceStatus = 'live' | 'beta' | 'coming-soon'
 
-export type TrainingType = 'video' | 'guide' | 'template' | 'playbook'
-
-export interface TrainingMaterial {
-  label: string
-  type: TrainingType
-  url: string
-}
-
-export interface Tool {
+export interface Resource {
   id: string
+  type: ResourceType
   name: string
   description: string
-  category: ToolCategory
-  status: ToolStatus
+  category: string
+  status: ResourceStatus
   icon: string
-  toolUrl?: string
-  trainingUrl?: string
-  trainingLabel?: string
+  /** Primary action URL (open tool, start course, schedule, try prompt) */
+  url?: string
+  /** Label override for the primary action button */
+  actionLabel?: string
+  /** Duration label (e.g. "30 min", "3–4 hours") */
+  duration?: string
+  /** Format label (e.g. "Online", "In-person", "Self-paced") */
+  format?: string
 }
+
+/* ── Process Model ── */
 
 export interface ProcessStep {
   id: string
@@ -36,8 +36,8 @@ export interface ProcessStep {
   /** Full step title for the detail panel */
   title: string
   description: string
-  toolIds: string[]
-  trainingMaterials: TrainingMaterial[]
+  /** IDs referencing any resource type: tools, courses, workshops, prompts */
+  resourceIds: string[]
 }
 
 export interface Process {

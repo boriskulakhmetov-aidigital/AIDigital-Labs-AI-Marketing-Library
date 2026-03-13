@@ -1,20 +1,27 @@
 import { useState, useRef, useEffect } from 'react'
-import type { Tool, TrainingType } from '../types'
+import type { Resource } from '../types'
+import type { NavigateToStep } from '../App'
 import { PROCESSES } from '../data/processes'
-import { TOOL_MAP } from '../data/tools'
+import { RESOURCE_MAP } from '../data/resources'
 
-/* ── Training type metadata ── */
-const TRAINING_META: Record<TrainingType, { icon: string; color: string }> = {
-  video:    { icon: '▶', color: 'training--video' },
-  guide:    { icon: '📖', color: 'training--guide' },
-  template: { icon: '📄', color: 'training--template' },
-  playbook: { icon: '📚', color: 'training--playbook' },
-}
-
-const STATUS_LABEL: Record<Tool['status'], string> = {
+const STATUS_LABEL: Record<Resource['status'], string> = {
   live: 'Live',
   beta: 'Beta',
   'coming-soon': 'Coming Soon',
+}
+
+const TYPE_LABEL: Record<Resource['type'], { icon: string; label: string }> = {
+  tool:            { icon: '🧰', label: 'Tools' },
+  course:          { icon: '📚', label: 'Courses & Modules' },
+  workshop:        { icon: '🏫', label: 'Workshops' },
+  'prompt-library': { icon: '🤖', label: 'Prompt Libraries' },
+}
+
+const ACTION_DEFAULTS: Record<Resource['type'], string> = {
+  tool: 'Open Tool',
+  course: 'Start Course',
+  workshop: 'Schedule Session',
+  'prompt-library': 'Try It',
 }
 
 /* ── Arrow connector SVG ── */
@@ -29,29 +36,44 @@ function StepConnector({ active }: { active: boolean }) {
   )
 }
 
-export function ProcessView() {
+interface Props {
+  navTarget: NavigateToStep | null
+  onNavConsumed: () => void
+}
+
+export function ProcessView({ navTarget, onNavConsumed }: Props) {
   const [activeProcessId, setActiveProcessId] = useState(PROCESSES[0].id)
   const [activeStepId, setActiveStepId] = useState(PROCESSES[0].steps[0].id)
   const detailRef = useRef<HTMLDivElement>(null)
 
+  // Handle deep-link from Learning tab
+  useEffect(() => {
+    if (navTarget) {
+      setActiveProcessId(navTarget.processId)
+      setActiveStepId(navTarget.stepId)
+      onNavConsumed()
+    }
+  }, [navTarget, onNavConsumed])
+
   const activeProcess = PROCESSES.find(p => p.id === activeProcessId)!
   const activeStep = activeProcess.steps.find(s => s.id === activeStepId)!
 
-  // When switching processes, reset to first step
   const handleProcessChange = (id: string) => {
     const p = PROCESSES.find(p => p.id === id)!
     setActiveProcessId(id)
     setActiveStepId(p.steps[0].id)
   }
 
-  // When switching steps, scroll detail panel into view on mobile
   useEffect(() => {
     if (window.innerWidth < 768 && detailRef.current) {
       detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }, [activeStepId])
 
-  const tools = activeStep.toolIds.map(id => TOOL_MAP[id]).filter(Boolean)
+  // Resolve and group resources by type
+  const allResources = activeStep.resourceIds.map(id => RESOURCE_MAP[id]).filter(Boolean)
+  const tools = allResources.filter(r => r.type === 'tool')
+  const learning = allResources.filter(r => r.type !== 'tool')
 
   return (
     <div className="process-view">
@@ -77,7 +99,6 @@ export function ProcessView() {
             const isPast = step.number < activeStep.number
             return (
               <div key={step.id} className="flow-step-group">
-                {/* Step node */}
                 <button
                   className={`flow-node ${isActive ? 'flow-node--active' : ''} ${isPast ? 'flow-node--past' : ''}`}
                   onClick={() => setActiveStepId(step.id)}
@@ -87,8 +108,6 @@ export function ProcessView() {
                   <div className="flow-node__icon">{step.nodeIcon}</div>
                   <div className="flow-node__label">{step.nodeLabel}</div>
                 </button>
-
-                {/* Connector to next step */}
                 {i < activeProcess.steps.length - 1 && (
                   <StepConnector active={isPast || isActive} />
                 )}
@@ -96,8 +115,6 @@ export function ProcessView() {
             )
           })}
         </div>
-
-        {/* Progress bar under the track */}
         <div className="flow-progress">
           <div
             className="flow-progress__fill"
@@ -111,7 +128,6 @@ export function ProcessView() {
       {/* ── Step Detail Panel ── */}
       <div className="step-detail" ref={detailRef}>
         <div className="step-detail__inner">
-          {/* Header */}
           <div className="step-detail__header">
             <div className="step-detail__num">Step {activeStep.number}</div>
             <h2 className="step-detail__title">{activeStep.title}</h2>
@@ -127,68 +143,28 @@ export function ProcessView() {
               </div>
               {tools.length > 0 ? (
                 <div className="step-tool-list">
-                  {tools.map(tool => (
-                    <div
-                      key={tool.id}
-                      className={`step-tool-card ${tool.status === 'coming-soon' ? 'step-tool-card--dim' : ''}`}
-                    >
-                      <div className="step-tool-card__top">
-                        <span className="step-tool-card__icon">{tool.icon}</span>
-                        <div className="step-tool-card__info">
-                          <div className="step-tool-card__name">{tool.name}</div>
-                          <div className="step-tool-card__cat">{tool.category}</div>
-                        </div>
-                        <span className={`step-tool-badge step-tool-badge--${tool.status}`}>
-                          {STATUS_LABEL[tool.status]}
-                        </span>
-                      </div>
-                      {tool.status !== 'coming-soon' && (
-                        <div className="step-tool-card__actions">
-                          {tool.toolUrl && (
-                            <a className="step-btn-tool" href={tool.toolUrl} target="_blank" rel="noreferrer">
-                              Open Tool ↗
-                            </a>
-                          )}
-                          {tool.trainingUrl && (
-                            <a className="step-btn-training" href={tool.trainingUrl} target="_blank" rel="noreferrer">
-                              {tool.trainingLabel ?? 'Training'} ↗
-                            </a>
-                          )}
-                        </div>
-                      )}
-                    </div>
+                  {tools.map(r => (
+                    <ResourceCard key={r.id} resource={r} />
                   ))}
                 </div>
               ) : (
-                <div className="step-no-tools">No specific tools required — this step is process and judgement work.</div>
+                <div className="step-no-tools">
+                  No specific tools required — this step is process and judgement work.
+                </div>
               )}
             </div>
 
-            {/* Training materials column */}
-            {activeStep.trainingMaterials.length > 0 && (
+            {/* Learning resources column */}
+            {learning.length > 0 && (
               <div className="step-detail__section">
                 <div className="step-section-label">
                   <span className="step-section-label__icon">📚</span>
-                  Training & Guides
+                  Learning & Resources
                 </div>
-                <div className="step-training-list">
-                  {activeStep.trainingMaterials.map((m, i) => {
-                    const meta = TRAINING_META[m.type]
-                    return (
-                      <a
-                        key={i}
-                        className={`step-training-card ${meta.color}`}
-                        href={m.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <span className="step-training-card__icon">{meta.icon}</span>
-                        <span className="step-training-card__label">{m.label}</span>
-                        <span className="step-training-card__type">{m.type}</span>
-                        <span className="step-training-card__arrow">↗</span>
-                      </a>
-                    )
-                  })}
+                <div className="step-tool-list">
+                  {learning.map(r => (
+                    <ResourceCard key={r.id} resource={r} />
+                  ))}
                 </div>
               </div>
             )}
@@ -222,6 +198,39 @@ export function ProcessView() {
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+/* ── Shared resource card used in step detail ── */
+function ResourceCard({ resource: r }: { resource: Resource }) {
+  const isAvailable = r.status !== 'coming-soon'
+  const typeInfo = TYPE_LABEL[r.type]
+
+  return (
+    <div className={`step-tool-card ${!isAvailable ? 'step-tool-card--dim' : ''}`}>
+      <div className="step-tool-card__top">
+        <span className="step-tool-card__icon">{r.icon}</span>
+        <div className="step-tool-card__info">
+          <div className="step-tool-card__name">{r.name}</div>
+          <div className="step-tool-card__cat">
+            {typeInfo.icon} {typeInfo.label} · {r.category}
+            {r.duration && <> · {r.duration}</>}
+          </div>
+        </div>
+        <span className={`step-tool-badge step-tool-badge--${r.status}`}>
+          {STATUS_LABEL[r.status]}
+        </span>
+      </div>
+      {isAvailable && (
+        <div className="step-tool-card__actions">
+          {r.url && (
+            <a className="step-btn-tool" href={r.url} target="_blank" rel="noreferrer">
+              {r.actionLabel ?? ACTION_DEFAULTS[r.type]} ↗
+            </a>
+          )}
+        </div>
+      )}
     </div>
   )
 }
