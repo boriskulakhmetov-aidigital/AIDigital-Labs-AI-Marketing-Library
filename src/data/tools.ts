@@ -21,7 +21,7 @@ export const TOOLS: Tool[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🧠',
-    toolUrl: 'https://ai-labs-neuromarketing-audit.netlify.app',
+    toolUrl: 'https://aidigitallabs-neuromarketing-audit.netlify.app/',
     trainingUrl: '#',
     trainingLabel: 'Watch walkthrough',
   },
