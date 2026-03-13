@@ -1,14 +1,21 @@
+import { BrandMark } from '../design-system/BrandMark'
+import { ThemeToggle } from '../design-system/ThemeToggle'
+import type { Theme } from '../hooks/useTheme'
+
 type View = 'process' | 'tools'
 
 interface NavbarProps {
   view: View
   onViewChange: (v: View) => void
+  theme: Theme
+  onThemeToggle: () => void
 }
 
-export function Navbar({ view, onViewChange }: NavbarProps) {
+export function Navbar({ view, onViewChange, theme, onThemeToggle }: NavbarProps) {
   return (
     <header className="portal-nav">
       <div className="portal-nav__brand">
+        <BrandMark size={24} />
         <span className="portal-nav__logo">AIDigital Labs</span>
         <span className="portal-nav__divider" />
         <span className="portal-nav__product">Smart Tools</span>
@@ -31,7 +38,7 @@ export function Navbar({ view, onViewChange }: NavbarProps) {
         </button>
       </div>
 
-      <nav className="portal-nav__links">
+      <div className="portal-nav__right">
         <a
           href="https://github.com/boriskulakhmetov-aidigital/AIDigital-Labs-AI-Marketing-Library"
           target="_blank"
@@ -40,7 +47,8 @@ export function Navbar({ view, onViewChange }: NavbarProps) {
         >
           GitHub ↗
         </a>
-      </nav>
+        <ThemeToggle theme={theme} onToggle={onThemeToggle} />
+      </div>
     </header>
   )
 }
