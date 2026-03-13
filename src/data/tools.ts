@@ -33,7 +33,7 @@ export const TOOLS: Tool[] = [
     category: 'AI Research',
     status: 'beta',
     icon: '👥',
-    toolUrl: '#',
+    toolUrl: 'https://aidigitallabs-synthetic-focus-group.netlify.app/',
     trainingUrl: '#',
     trainingLabel: 'View guide',
   },
