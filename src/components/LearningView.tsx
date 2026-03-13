@@ -1,15 +1,24 @@
 import { useState } from 'react'
 import type { Resource, ResourceType } from '../types'
-import { getResourcesByType } from '../data/resources'
+import { RESOURCES, getResourcesByType } from '../data/resources'
 import { PROCESSES } from '../data/processes'
 
-type SubTab = 'courses' | 'workshops' | 'prompts'
+type SubTab = 'all' | 'courses' | 'workshops' | 'prompts'
 
-const SUB_TABS: { id: SubTab; label: string; icon: string; type: ResourceType }[] = [
+const SUB_TABS: { id: SubTab; label: string; icon: string; type?: ResourceType }[] = [
+  { id: 'all', label: 'All Resources', icon: '📖' },
   { id: 'courses', label: 'Courses & Modules', icon: '📚', type: 'course' },
   { id: 'workshops', label: 'Workshops', icon: '🏫', type: 'workshop' },
   { id: 'prompts', label: 'AI-Assisted Learning', icon: '🤖', type: 'ai-learning' },
 ]
+
+function getAllLearningResources(): Resource[] {
+  return RESOURCES.filter(r => r.type !== 'tool')
+}
+
+function getTabCount(tab: typeof SUB_TABS[number]): number {
+  return tab.type ? getResourcesByType(tab.type).length : getAllLearningResources().length
+}
 
 const STATUS_LABEL: Record<Resource['status'], string> = {
   live: 'Live',
@@ -41,9 +50,9 @@ function getProcessRefs(resourceId: string) {
 }
 
 export function LearningView({ onNavigateToStep }: Props) {
-  const [activeTab, setActiveTab] = useState<SubTab>('courses')
+  const [activeTab, setActiveTab] = useState<SubTab>('all')
   const currentTab = SUB_TABS.find(t => t.id === activeTab)!
-  const resources = getResourcesByType(currentTab.type)
+  const resources = currentTab.type ? getResourcesByType(currentTab.type) : getAllLearningResources()
 
   return (
     <div className="learning-view">
@@ -66,7 +75,7 @@ export function LearningView({ onNavigateToStep }: Props) {
             <span className="learning-tab__icon">{tab.icon}</span>
             <span>{tab.label}</span>
             <span className="learning-tab__count">
-              {getResourcesByType(tab.type).length}
+              {getTabCount(tab)}
             </span>
           </button>
         ))}
