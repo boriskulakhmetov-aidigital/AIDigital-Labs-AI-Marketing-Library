@@ -3,7 +3,7 @@
    workshops, and prompt libraries.
    ════════════════════════════════════════════════════════════ */
 
-export type ResourceType = 'tool' | 'course' | 'workshop' | 'prompt-library'
+export type ResourceType = 'tool' | 'course' | 'workshop' | 'ai-learning'
 export type ResourceStatus = 'live' | 'beta' | 'coming-soon'
 
 export interface Resource {

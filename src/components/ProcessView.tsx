@@ -14,14 +14,14 @@ const TYPE_LABEL: Record<Resource['type'], { icon: string; label: string }> = {
   tool:            { icon: '🧰', label: 'Tools' },
   course:          { icon: '📚', label: 'Courses & Modules' },
   workshop:        { icon: '🏫', label: 'Workshops' },
-  'prompt-library': { icon: '🤖', label: 'Prompt Libraries' },
+  'ai-learning':    { icon: '🤖', label: 'AI-Assisted Learning' },
 }
 
 const ACTION_DEFAULTS: Record<Resource['type'], string> = {
   tool: 'Open Tool',
   course: 'Start Course',
   workshop: 'Schedule Session',
-  'prompt-library': 'Try It',
+  'ai-learning': 'Try It',
 }
 
 /* ── Arrow connector SVG ── */

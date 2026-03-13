@@ -8,7 +8,7 @@ type SubTab = 'courses' | 'workshops' | 'prompts'
 const SUB_TABS: { id: SubTab; label: string; icon: string; type: ResourceType }[] = [
   { id: 'courses', label: 'Courses & Modules', icon: '📚', type: 'course' },
   { id: 'workshops', label: 'Workshops', icon: '🏫', type: 'workshop' },
-  { id: 'prompts', label: 'Prompt Libraries', icon: '🤖', type: 'prompt-library' },
+  { id: 'prompts', label: 'AI-Assisted Learning', icon: '🤖', type: 'ai-learning' },
 ]
 
 const STATUS_LABEL: Record<Resource['status'], string> = {

@@ -2,7 +2,7 @@ import type { Resource } from '../types'
 
 /* ════════════════════════════════════════════════════════════
    Single source of truth — every tool, course, workshop, and
-   prompt library referenced across the portal lives here.
+   AI-assisted learning referenced across the portal lives here.
    ════════════════════════════════════════════════════════════ */
 
 export const RESOURCES: Resource[] = [
@@ -16,7 +16,7 @@ export const RESOURCES: Resource[] = [
     description:
       'Full technical and UX analysis of a client website — performance scores, structural issues, SEO signals, and conversion bottlenecks. Generate a client-ready report in minutes.',
     category: 'Audit & Analysis',
-    status: 'live',
+    status: 'beta',
     icon: '🔍',
     url: '#',
     actionLabel: 'Open Tool',
@@ -40,7 +40,7 @@ export const RESOURCES: Resource[] = [
     description:
       'Simulate audience reactions to concepts, messaging, and creative using AI personas calibrated to your target demographics — before spending a dollar on production.',
     category: 'AI Research',
-    status: 'beta',
+    status: 'live',
     icon: '👥',
     url: 'https://aidigitallabs-synthetic-focus-group.netlify.app/',
     actionLabel: 'Open Tool',
@@ -52,10 +52,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Structured creative brainstorming inside Miro using the SCAMPER framework — Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Reverse.',
     category: 'Creative & Ideation',
-    status: 'live',
+    status: 'coming-soon',
     icon: '⚡',
-    url: '#',
-    actionLabel: 'Open in Miro',
   },
   {
     id: 'aio-optimizer',
@@ -64,10 +62,8 @@ export const RESOURCES: Resource[] = [
     description:
       "Evaluate a client's content and digital presence for inclusion potential in AI-generated search answers across ChatGPT, Perplexity, Google AI Overviews, and beyond.",
     category: 'AI Research',
-    status: 'beta',
+    status: 'coming-soon',
     icon: '🤖',
-    url: '#',
-    actionLabel: 'Open Tool',
   },
   {
     id: 'media-plan-builder',
@@ -110,10 +106,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Learn the behavioural science behind why people click, buy, and remember. Covers attention capture, emotional triggers, visual hierarchy, colour semantics, and how to apply them to ad creative and landing pages.',
     category: 'Audit & Analysis',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🧠',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '45 min',
     format: 'Self-paced',
   },
@@ -124,10 +118,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Step-by-step walkthrough of the Website Audit Tool — how to interpret scores, prioritise fixes, and present technical findings in language clients understand.',
     category: 'Audit & Analysis',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🔍',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '30 min',
     format: 'Self-paced',
   },
@@ -138,10 +130,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Understand how AI search engines select, rank, and cite content. Learn to score a brand\'s AI search visibility and build an improvement roadmap that closes the gap before competitors.',
     category: 'AI Research',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🤖',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '40 min',
     format: 'Self-paced',
   },
@@ -152,10 +142,8 @@ export const RESOURCES: Resource[] = [
     description:
       'How to set up, calibrate, and interpret results from AI-powered synthetic focus groups. Covers persona design, question framing, response analysis, and presenting findings to clients.',
     category: 'AI Research',
-    status: 'live',
+    status: 'coming-soon',
     icon: '👥',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '35 min',
     format: 'Self-paced',
   },
@@ -166,10 +154,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Master the SCAMPER framework for structured creative ideation — Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Reverse. Includes facilitation guide for running sessions with teams.',
     category: 'Creative & Ideation',
-    status: 'live',
+    status: 'coming-soon',
     icon: '⚡',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '25 min',
     format: 'Self-paced',
   },
@@ -180,10 +166,8 @@ export const RESOURCES: Resource[] = [
     description:
       'From TAM scoring to next-best-action models — learn how to build an intelligence-led sales pipeline using AI tools. Covers prospect scoring, data-backed proposals, and consultative selling techniques.',
     category: 'Sales & Strategy',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🎯',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '50 min',
     format: 'Self-paced',
   },
@@ -194,10 +178,8 @@ export const RESOURCES: Resource[] = [
     description:
       'Build defensible media plans grounded in audience intelligence and AI insights. Covers brief capture, audience validation, channel strategy, and creative briefing — end to end.',
     category: 'Sales & Strategy',
-    status: 'live',
+    status: 'coming-soon',
     icon: '📡',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '45 min',
     format: 'Self-paced',
   },
@@ -208,10 +190,8 @@ export const RESOURCES: Resource[] = [
     description:
       'How to evaluate live campaign creative against neuromarketing principles — attention, emotion, hierarchy, recall. Learn to produce evidence-based creative reviews that transform subjective feedback cycles.',
     category: 'Creative & Ideation',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🎨',
-    url: '#',
-    actionLabel: 'Start Course',
     duration: '35 min',
     format: 'Self-paced',
   },
@@ -236,11 +216,11 @@ export const RESOURCES: Resource[] = [
   {
     id: 'workshop-enablement',
     type: 'workshop',
-    name: 'AI Enablement Workshop',
+    name: 'Online Ideation Workshop',
     description:
       'A hands-on session of ideation and tool design specifically for your team. Walk through real use cases, run live tools on your own data, and leave with a prioritised adoption roadmap.',
     category: 'Enablement',
-    status: 'live',
+    status: 'beta',
     icon: '🚀',
     url: '#',
     actionLabel: 'Schedule Session',
@@ -268,7 +248,7 @@ export const RESOURCES: Resource[] = [
     description:
       'Learn what lies behind the behavioural science of creatives and how to apply it in your work. Interactive session with live scoring of your own assets, colour psychology deep dive, and actionable takeaways.',
     category: 'Specialized',
-    status: 'live',
+    status: 'beta',
     icon: '🧠',
     url: '#',
     actionLabel: 'Schedule Session',
@@ -282,10 +262,8 @@ export const RESOURCES: Resource[] = [
     description:
       'How AI search engines work, how they select and cite content, and what you can do to improve your clients\' visibility across ChatGPT, Perplexity, and Google AI Overviews.',
     category: 'Specialized',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🔎',
-    url: '#',
-    actionLabel: 'Schedule Session',
     duration: '1 hour',
     format: 'Online',
   },
@@ -296,10 +274,8 @@ export const RESOURCES: Resource[] = [
     description:
       'How to run focus groups in AI-enabled environments — from persona calibration to result interpretation. Hands-on practice with the Synthetic Focus Group tool on your live briefs.',
     category: 'Specialized',
-    status: 'live',
+    status: 'coming-soon',
     icon: '👥',
-    url: '#',
-    actionLabel: 'Schedule Session',
     duration: '1 hour',
     format: 'Online',
   },
@@ -310,64 +286,97 @@ export const RESOURCES: Resource[] = [
     description:
       'How to best utilize marketing mix modelling in building successful campaigns. Covers data inputs, model interpretation, budget reallocation, and presenting MMM insights to clients.',
     category: 'Specialized',
-    status: 'live',
+    status: 'coming-soon',
     icon: '📈',
-    url: '#',
-    actionLabel: 'Schedule Session',
     duration: '1 hour',
     format: 'Online',
   },
 
   // ══════════════════════════════════════════════════════════
-  //  PROMPT LIBRARIES & INTERACTIVE TOOLS
+  //  AI-ASSISTED LEARNING — Chatbots, AI Agents & Prompt Libraries
   // ══════════════════════════════════════════════════════════
   {
+    id: 'agent-chatbots-llms',
+    type: 'ai-learning',
+    name: 'Chatbots and LLMs',
+    description:
+      'An interactive chatbot that teaches you the fundamentals of large language models and conversational AI — how they work, what they can and can\'t do, and how to use them effectively in a marketing context.',
+    category: 'AI Foundations',
+    status: 'live',
+    icon: '💬',
+    url: '#',
+    actionLabel: 'Start Chat',
+    format: 'Chatbot',
+  },
+  {
+    id: 'agent-spark-blaze',
+    type: 'ai-learning',
+    name: 'SPARK and BLAZE Frameworks',
+    description:
+      'A guided chatbot that walks you through the SPARK (prompt engineering) and BLAZE (agent orchestration) frameworks — learn to write effective prompts and design multi-step AI workflows through conversation.',
+    category: 'AI Foundations',
+    status: 'live',
+    icon: '🔥',
+    url: '#',
+    actionLabel: 'Start Chat',
+    format: 'Chatbot',
+  },
+  {
+    id: 'prompt-hallucination',
+    type: 'ai-learning',
+    name: 'Mitigating Hallucination & Source-Checking',
+    description:
+      'A prompt library and reference guide for identifying, mitigating, and source-checking AI hallucinations. Learn practical techniques to verify AI outputs, design hallucination-resistant prompts, and build trust in AI-assisted workflows.',
+    category: 'AI Foundations',
+    status: 'live',
+    icon: '🛡️',
+    url: '#',
+    actionLabel: 'Open Library',
+    format: 'Prompt Library',
+  },
+  {
     id: 'prompt-sales-coach',
-    type: 'prompt-library',
+    type: 'ai-learning',
     name: 'AI Sales Coach',
     description:
       'A virtual counterpart for your sales team to practice pitches and objection handling in a safe environment. Simulates client personas, scores your pitch, and provides real-time coaching on messaging, tone, and closing techniques.',
     category: 'Sales & Enablement',
-    status: 'beta',
+    status: 'coming-soon',
     icon: '🎙️',
-    url: '#',
-    actionLabel: 'Try It',
+    format: 'AI Agent',
   },
   {
     id: 'prompt-tech-agent',
-    type: 'prompt-library',
+    type: 'ai-learning',
     name: 'AI Technical Agent — Open Garden',
     description:
       'An AI agent that helps your teams answer any question about AIDigital\'s programmatic offering "Open Garden" — capabilities, targeting options, inventory, integrations, and technical specs.',
     category: 'Sales & Enablement',
-    status: 'beta',
+    status: 'coming-soon',
     icon: '🤖',
-    url: '#',
-    actionLabel: 'Try It',
+    format: 'AI Agent',
   },
   {
     id: 'prompt-pptx',
-    type: 'prompt-library',
+    type: 'ai-learning',
     name: 'PowerPoint Creation Prompts',
     description:
       'A curated prompt library for efficient PowerPoint document creation — from proposal decks to performance reports. Structured templates that turn raw data and briefs into presentation-ready slides.',
     category: 'Productivity',
-    status: 'live',
+    status: 'coming-soon',
     icon: '📑',
-    url: '#',
-    actionLabel: 'Open Library',
+    format: 'Prompt Library',
   },
   {
     id: 'prompt-audience-research',
-    type: 'prompt-library',
+    type: 'ai-learning',
     name: 'Customer Audience Research Prompts',
     description:
       'Prompt library for conducting deep customer audience research with AI — persona development, behavioural segmentation, need-state mapping, and competitive audience analysis.',
     category: 'Research',
-    status: 'live',
+    status: 'coming-soon',
     icon: '🔬',
-    url: '#',
-    actionLabel: 'Open Library',
+    format: 'Prompt Library',
   },
 ]
 
