@@ -75,6 +75,26 @@ export const TRAINING_COLORS = {
   playbook: { text: '#e771de', bg: 'rgba(231, 113, 222, 0.10)', border: 'rgba(231, 113, 222, 0.25)' },
 } as const;
 
+// ── Favicon ───────────────────────────────────────────────────────────────────
+// Browser-tab icon: /public/favicon.svg
+// Uses the 4-quadrant brand mark. To rebrand: update BRAND_COLORS above and
+// regenerate favicon.svg to match (or use buildFaviconSvg() helper below).
+
+export function buildFaviconSvg(): string {
+  const { blue, green, pink, black } = BRAND_COLORS;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+  <rect x="0" y="0" width="10" height="10" rx="2" fill="${blue}"/>
+  <polygon points="3.5,3.5 3.5,6.5 7,5" fill="white"/>
+  <rect x="12" y="0" width="10" height="10" rx="2" fill="${green}"/>
+  <circle cx="17" cy="5" r="2.4" fill="${black}"/>
+  <rect x="0" y="12" width="10" height="10" rx="2" fill="${pink}"/>
+  <line x1="3.2" y1="15.2" x2="6.8" y2="18.8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="6.8" y1="15.2" x2="3.2" y2="18.8" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="12" y="12" width="10" height="10" rx="2" fill="#e0e8ff"/>
+  <rect x="15.5" y="15.5" width="3" height="3" rx="0.5" fill="${blue}"/>
+</svg>`;
+}
+
 // ── Shape ─────────────────────────────────────────────────────────────────────
 
 export const RADIUS = {
