@@ -18,7 +18,7 @@ export const PROCESSES: Process[] = [
         description:
           'Map the total addressable market for digital advertising in your territory. Identify the competitive landscape, benchmark spend levels, and score opportunities by vertical, size, and timing. This gives your team a prioritised universe to work from — not a random list.',
         resourceIds: [
-          'website-audit', 'aio-optimizer', 'competitive-intelligence',
+          'website-audit', 'aio-optimizer',
           'smart-prospecting-agent', 'prospect-scanner-agent',
           'course-sales-prospecting', 'course-aio',
           'workshop-spark',
@@ -48,7 +48,7 @@ export const PROCESSES: Process[] = [
         description:
           'Construct a proposal grounded in the prospect\'s own data. Lead with their documented gaps — website weaknesses, AI search invisibility, creative ineffectiveness — then present a tailored solution with channel mix, budget allocation, and projected outcomes.',
         resourceIds: [
-          'neuromarketing-audit', 'aio-optimizer', 'media-plan-builder', 'reporting-automation',
+          'neuromarketing-audit', 'aio-optimizer',
           'case-study-builder', 'pitch-deck-scorer', 'document-logic-check',
           'course-media-planning',
           'prompt-pptx',
@@ -63,7 +63,7 @@ export const PROCESSES: Process[] = [
         description:
           'Prepare the pitch using the audit outputs as a narrative spine — show the prospect what they\'re missing in terms they recognise. Run the conversation as a consultative diagnostic: listen first, confirm the pain, then present the solution.',
         resourceIds: [
-          'neuromarketing-audit', 'synthetic-focus-group', 'reporting-automation',
+          'neuromarketing-audit', 'synthetic-focus-group',
           'multipurpose-coaching-bot', 'technical-assistant',
           'course-sales-prospecting',
           'workshop-enablement',
@@ -102,7 +102,7 @@ export const PROCESSES: Process[] = [
         description:
           'Define target personas and pressure-test your assumptions using a synthetic focus group before any budget commitment. Validate which messages resonate, which channels the audience trusts, and which creative approaches land.',
         resourceIds: [
-          'synthetic-focus-group', 'competitive-intelligence',
+          'synthetic-focus-group',
           'course-focus-group',
           'prompt-audience-research',
         ],
@@ -116,7 +116,7 @@ export const PROCESSES: Process[] = [
         description:
           'Map validated audience insights to channel mix and ad formats. Factor in AI search visibility to understand where the client\'s organic presence supports or undermines the paid strategy.',
         resourceIds: [
-          'aio-optimizer', 'media-plan-builder',
+          'aio-optimizer',
           'course-aio', 'course-media-planning',
         ],
       },
@@ -142,7 +142,6 @@ export const PROCESSES: Process[] = [
         description:
           'Package the complete plan — audience rationale, channel mix, creative brief, budget allocation, flight schedule — for client presentation. Address feedback with data rather than opinion.',
         resourceIds: [
-          'media-plan-builder', 'reporting-automation',
           'prompt-pptx',
         ],
       },
@@ -219,7 +218,6 @@ export const PROCESSES: Process[] = [
         description:
           'Present final creative with neuromarketing scores and audience validation data attached. Obtain approval, document all production specifications, and hand off to the delivery team.',
         resourceIds: [
-          'reporting-automation',
           'prompt-pptx',
         ],
       },
@@ -267,7 +265,7 @@ export const PROCESSES: Process[] = [
         description:
           'Score the client\'s content and brand for inclusion in AI-generated search answers across ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. This is the new frontier of organic visibility.',
         resourceIds: [
-          'aio-optimizer', 'competitive-intelligence', 'prompt-engineering-assistant',
+          'aio-optimizer', 'prompt-engineering-assistant',
           'course-aio',
           'workshop-ai-search',
         ],
@@ -295,7 +293,7 @@ export const PROCESSES: Process[] = [
         description:
           'Compile all findings into a structured client report with prioritised action items across digital presence, AI visibility, and creative effectiveness.',
         resourceIds: [
-          'neuromarketing-audit', 'reporting-automation', 'dsp-performance-agent',
+          'neuromarketing-audit', 'dsp-performance-agent',
           'prompt-pptx',
         ],
       },

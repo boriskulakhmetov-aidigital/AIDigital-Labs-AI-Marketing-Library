@@ -68,36 +68,6 @@ export const RESOURCES: Resource[] = [
     actionLabel: 'Open Tool',
   },
   {
-    id: 'media-plan-builder',
-    type: 'tool',
-    name: 'Media Plan Builder',
-    description:
-      'Generate structured media plans with channel mix recommendations, budget allocation, and flight schedules — shareable as PDF or editable spreadsheet.',
-    category: 'Reporting & Automation',
-    status: 'coming-soon',
-    icon: '📋',
-  },
-  {
-    id: 'competitive-intelligence',
-    type: 'tool',
-    name: 'Competitive Intelligence Tool',
-    description:
-      'Map competitor ad activity, messaging patterns, and AI search presence — giving you the context to craft a sharper, more differentiated pitch or brief.',
-    category: 'AI Research',
-    status: 'coming-soon',
-    icon: '🔭',
-  },
-  {
-    id: 'reporting-automation',
-    type: 'tool',
-    name: 'Reporting & Automation Suite',
-    description:
-      'Automate campaign performance reports, client-ready decks, and recurring analytics summaries — connected to your ad platforms via API.',
-    category: 'Reporting & Automation',
-    status: 'coming-soon',
-    icon: '📊',
-  },
-  {
     id: 'ideation-synthesizer',
     type: 'tool',
     name: 'Ideation Synthesizer',
