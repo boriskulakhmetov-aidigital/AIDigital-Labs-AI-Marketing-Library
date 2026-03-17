@@ -19,6 +19,7 @@ export const PROCESSES: Process[] = [
           'Map the total addressable market for digital advertising in your territory. Identify the competitive landscape, benchmark spend levels, and score opportunities by vertical, size, and timing. This gives your team a prioritised universe to work from — not a random list.',
         resourceIds: [
           'website-audit', 'aio-optimizer', 'competitive-intelligence',
+          'smart-prospecting-agent', 'prospect-scanner-agent',
           'course-sales-prospecting', 'course-aio',
           'workshop-spark',
         ],
@@ -33,6 +34,7 @@ export const PROCESSES: Process[] = [
           'Apply next-best-action scoring to identify which prospects are most likely to convert and when. Combine digital footprint data (website health, AI search visibility, creative quality) with firmographic signals to build a prioritised pipeline with clear outreach rationale for each account.',
         resourceIds: [
           'website-audit', 'neuromarketing-audit', 'aio-optimizer',
+          'smart-prospecting-agent', 'prospect-scanner-agent',
           'course-sales-prospecting', 'course-website-audit',
           'prompt-audience-research',
         ],
@@ -47,6 +49,7 @@ export const PROCESSES: Process[] = [
           'Construct a proposal grounded in the prospect\'s own data. Lead with their documented gaps — website weaknesses, AI search invisibility, creative ineffectiveness — then present a tailored solution with channel mix, budget allocation, and projected outcomes.',
         resourceIds: [
           'neuromarketing-audit', 'aio-optimizer', 'media-plan-builder', 'reporting-automation',
+          'case-study-builder', 'pitch-deck-scorer', 'document-logic-check',
           'course-media-planning',
           'prompt-pptx',
         ],
@@ -61,6 +64,7 @@ export const PROCESSES: Process[] = [
           'Prepare the pitch using the audit outputs as a narrative spine — show the prospect what they\'re missing in terms they recognise. Run the conversation as a consultative diagnostic: listen first, confirm the pain, then present the solution.',
         resourceIds: [
           'neuromarketing-audit', 'synthetic-focus-group', 'reporting-automation',
+          'multipurpose-coaching-bot', 'technical-assistant',
           'course-sales-prospecting',
           'workshop-enablement',
           'prompt-sales-coach',
@@ -174,7 +178,7 @@ export const PROCESSES: Process[] = [
         description:
           'Run a facilitated SCAMPER ideation session inside Miro to generate a wide range of creative concepts before converging on the strongest directions. Diverge before you converge.',
         resourceIds: [
-          'scamper-ideation',
+          'scamper-ideation', 'ideation-synthesizer', 'rapid-prototyper',
           'course-scamper',
           'workshop-custom',
         ],
@@ -263,7 +267,7 @@ export const PROCESSES: Process[] = [
         description:
           'Score the client\'s content and brand for inclusion in AI-generated search answers across ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. This is the new frontier of organic visibility.',
         resourceIds: [
-          'aio-optimizer', 'competitive-intelligence',
+          'aio-optimizer', 'competitive-intelligence', 'prompt-engineering-assistant',
           'course-aio',
           'workshop-ai-search',
         ],
@@ -291,7 +295,7 @@ export const PROCESSES: Process[] = [
         description:
           'Compile all findings into a structured client report with prioritised action items across digital presence, AI visibility, and creative effectiveness.',
         resourceIds: [
-          'neuromarketing-audit', 'reporting-automation',
+          'neuromarketing-audit', 'reporting-automation', 'dsp-performance-agent',
           'prompt-pptx',
         ],
       },

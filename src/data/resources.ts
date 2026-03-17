@@ -16,7 +16,7 @@ export const RESOURCES: Resource[] = [
     description:
       'Full technical and UX analysis of a client website — performance scores, structural issues, SEO signals, and conversion bottlenecks. Generate a client-ready report in minutes.',
     category: 'Audit & Analysis',
-    status: 'beta',
+    status: 'live',
     icon: '🔍',
     url: '#',
     actionLabel: 'Open Tool',
@@ -60,10 +60,12 @@ export const RESOURCES: Resource[] = [
     type: 'tool',
     name: 'AIO Optimizer',
     description:
-      "Evaluate a client's content and digital presence for inclusion potential in AI-generated search answers across ChatGPT, Perplexity, Google AI Overviews, and beyond.",
+      "Audits AI engine awareness of a product or brand and provides recommendations to improve visibility across ChatGPT, Perplexity, Google AI Overviews, and beyond.",
     category: 'AI Research',
-    status: 'coming-soon',
+    status: 'live',
     icon: '🤖',
+    url: '#',
+    actionLabel: 'Open Tool',
   },
   {
     id: 'media-plan-builder',
@@ -94,6 +96,126 @@ export const RESOURCES: Resource[] = [
     category: 'Reporting & Automation',
     status: 'coming-soon',
     icon: '📊',
+  },
+  {
+    id: 'ideation-synthesizer',
+    type: 'tool',
+    name: 'Ideation Synthesizer',
+    description:
+      'Collects scattered notes from Miro boards and docs, and outputs a structured, prioritised idea list. Integrated as a Miro app for seamless in-board use.',
+    category: 'Creative & Ideation',
+    status: 'live',
+    icon: '💡',
+    url: '#',
+    actionLabel: 'Open Tool',
+  },
+  {
+    id: 'rapid-prototyper',
+    type: 'tool',
+    name: 'Rapid Prototyper',
+    description:
+      'Instantly mocks up ideas during brainstorms so the team can react to something tangible. Runs as a Miro app — turn any sticky note into a visual prototype in seconds.',
+    category: 'Creative & Ideation',
+    status: 'live',
+    icon: '🎨',
+    url: '#',
+    actionLabel: 'Open Tool',
+  },
+  {
+    id: 'prompt-engineering-assistant',
+    type: 'tool',
+    name: 'Prompt Engineering Assistant',
+    description:
+      'Helps users craft or fine-tune prompts while testing for consistency, hallucinations and drift. Your copilot for getting reliable, repeatable outputs from any LLM.',
+    category: 'AI Research',
+    status: 'live',
+    icon: '✏️',
+    url: '#',
+    actionLabel: 'Open Tool',
+  },
+  {
+    id: 'smart-prospecting-agent',
+    type: 'tool',
+    name: 'Smart Prospecting Agent',
+    description:
+      'Scan LinkedIn, CapIQ, and CRM data to surface high-potential leads ranked by propensity score via ML model. Turns hours of manual prospecting into a prioritised shortlist.',
+    category: 'Sales & Strategy',
+    status: 'beta',
+    icon: '🎯',
+    url: '#',
+    actionLabel: 'Open Tool',
+  },
+  {
+    id: 'prospect-scanner-agent',
+    type: 'tool',
+    name: 'Prospect Scanner Agent',
+    description:
+      "Create sellers' cheat sheet with key verticals, use-cases, and platform breakdown by scrubbing pixels and social media. Walk into every meeting fully briefed.",
+    category: 'Sales & Strategy',
+    status: 'beta',
+    icon: '📡',
+    url: '#',
+    actionLabel: 'Open Tool',
+  },
+  {
+    id: 'case-study-builder',
+    type: 'tool',
+    name: 'Case Study Builder',
+    description:
+      'Pull performance data from Elevate and brand guidelines to auto-produce polished client case studies. From raw numbers to client-ready narrative in minutes.',
+    category: 'Sales & Strategy',
+    status: 'coming-soon',
+    icon: '📝',
+  },
+  {
+    id: 'pitch-deck-scorer',
+    type: 'tool',
+    name: 'Pitch Deck Scorer',
+    description:
+      'Review finished decks through proven sales techniques, flagging weaknesses and suggesting fixes. Catch gaps before the client does.',
+    category: 'Sales & Strategy',
+    status: 'coming-soon',
+    icon: '📊',
+  },
+  {
+    id: 'document-logic-check',
+    type: 'tool',
+    name: 'Document Logic Check',
+    description:
+      'Advanced proofreading layer across all outgoing documents to check copy and document logic including process compliance and MECE. Your last line of defence before send.',
+    category: 'Audit & Analysis',
+    status: 'coming-soon',
+    icon: '📋',
+  },
+  {
+    id: 'multipurpose-coaching-bot',
+    type: 'tool',
+    name: 'Multipurpose Coaching Bot',
+    description:
+      'Interactive multipurpose agent for reps to practice sales techniques and AIDigital process handling. Safe environment to rehearse before the real thing.',
+    category: 'Sales & Strategy',
+    status: 'coming-soon',
+    icon: '🏋️',
+  },
+  {
+    id: 'technical-assistant',
+    type: 'tool',
+    name: 'Technical Assistant',
+    description:
+      'On-demand resource helping reps answer deep technical or value-based questions during live calls. Never get caught off-guard on product specs again.',
+    category: 'Sales & Strategy',
+    status: 'coming-soon',
+    icon: '🔧',
+  },
+  {
+    id: 'dsp-performance-agent',
+    type: 'tool',
+    name: 'DSP Agnostic Performance Assessment Agent',
+    description:
+      'Performance reporting integrated across AIDigital and competitor DSPs within client landscape. One view across all platforms.',
+    category: 'Reporting & Automation',
+    status: 'coming-soon',
+    icon: '📈',
   },
 
   // ══════════════════════════════════════════════════════════
