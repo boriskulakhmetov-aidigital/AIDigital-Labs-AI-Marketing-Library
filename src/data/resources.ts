@@ -18,7 +18,7 @@ export const RESOURCES: Resource[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🔍',
-    url: '#',
+    url: 'https://aidigitallabs-website-audit.netlify.app/',
     actionLabel: 'Open Tool',
   },
   {
@@ -64,7 +64,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '🤖',
-    url: '#',
+    url: 'https://aio-optimization.netlify.app/',
     actionLabel: 'Open Tool',
   },
   {
@@ -106,7 +106,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '💡',
-    url: '#',
+    url: 'https://aidigital-miro-creative-kit.netlify.app/',
     actionLabel: 'Open Tool',
   },
   {
@@ -118,7 +118,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '🎨',
-    url: '#',
+    url: 'https://aidigital-miro-creative-kit.netlify.app/',
     actionLabel: 'Open Tool',
   },
   {
@@ -130,7 +130,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '✏️',
-    url: '#',
+    url: 'https://ai-labs-prompt-engineering.netlify.app/',
     actionLabel: 'Open Tool',
   },
   {
