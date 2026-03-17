@@ -1,6 +1,5 @@
-import { BrandMark } from '../design-system/BrandMark'
-import { ThemeToggle } from '../design-system/ThemeToggle'
-import type { Theme } from '../hooks/useTheme'
+import { BrandMark, ThemeToggle } from '@boriskulakhmetov-aidigital/design-system'
+import type { Theme } from '@boriskulakhmetov-aidigital/design-system'
 import type { View } from '../App'
 
 interface NavbarProps {

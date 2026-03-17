@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { useTheme } from './hooks/useTheme'
+import { useTheme } from '@boriskulakhmetov-aidigital/design-system'
 import { Navbar } from './components/Navbar'
 import { ProcessView } from './components/ProcessView'
 import { ToolsView } from './components/ToolsView'
