@@ -18,7 +18,7 @@ export const RESOURCES: Resource[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🔍',
-    url: 'https://aidigitallabs-website-audit.netlify.app/',
+    url: 'https://website-audit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -30,7 +30,7 @@ export const RESOURCES: Resource[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🧠',
-    url: 'https://aidigitallabs-neuromarketing-audit.netlify.app/',
+    url: 'https://neuromarketing-audit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -42,7 +42,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '👥',
-    url: 'https://aidigitallabs-synthetic-focus-group.netlify.app/',
+    url: 'https://synthetic-focus-group.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -64,7 +64,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '🤖',
-    url: 'https://aio-optimization.netlify.app/',
+    url: 'https://aio-optimization.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -76,7 +76,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '💡',
-    url: 'https://aidigital-miro-creative-kit.netlify.app/',
+    url: 'https://ideation-toolkit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -88,7 +88,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '🎨',
-    url: 'https://aidigital-miro-creative-kit.netlify.app/',
+    url: 'https://ideation-toolkit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -100,7 +100,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '✏️',
-    url: 'https://ai-labs-prompt-engineering.netlify.app/',
+    url: 'https://prompt-engineer.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
