@@ -41,6 +41,13 @@ export function Navbar({ view, onViewChange, theme, onThemeToggle }: NavbarProps
           <span className="view-toggle__icon">🎓</span>
           <span>Learning</span>
         </button>
+        <button
+          className={`view-toggle__btn ${view === 'theme-editor' ? 'view-toggle__btn--active' : ''}`}
+          onClick={() => onViewChange('theme-editor')}
+        >
+          <span className="view-toggle__icon">🎨</span>
+          <span>Theme Editor</span>
+        </button>
       </div>
 
       <div className="portal-nav__right">

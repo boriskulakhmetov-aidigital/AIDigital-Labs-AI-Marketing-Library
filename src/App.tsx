@@ -4,9 +4,10 @@ import { Navbar } from './components/Navbar'
 import { ProcessView } from './components/ProcessView'
 import { ToolsView } from './components/ToolsView'
 import { LearningView } from './components/LearningView'
+import { ThemeEditorView } from './components/theme-editor/ThemeEditorView'
 import './App.css'
 
-export type View = 'process' | 'tools' | 'learning'
+export type View = 'process' | 'tools' | 'learning' | 'theme-editor'
 
 export interface NavigateToStep {
   processId: string
@@ -37,6 +38,7 @@ export default function App() {
         )}
         {view === 'tools' && <ToolsView />}
         {view === 'learning' && <LearningView onNavigateToStep={navigateToStep} />}
+        {view === 'theme-editor' && <ThemeEditorView />}
       </main>
       <footer className="portal-footer">
         <span>© {new Date().getFullYear()} AIDigital Labs · Smart Tools Portal</span>
