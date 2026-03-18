@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@boriskulakhmetov-aidigital/design-system": "^5.0.0",
+    "@boriskulakhmetov-aidigital/design-system": "^5.0.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
