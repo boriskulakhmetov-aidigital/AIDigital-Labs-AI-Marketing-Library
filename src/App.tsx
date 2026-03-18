@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
-import { useTheme } from '@boriskulakhmetov-aidigital/design-system'
-import { Navbar } from './components/Navbar'
+import { AppShell } from '@boriskulakhmetov-aidigital/design-system'
+import { createClient } from '@supabase/supabase-js'
 import { ProcessView } from './components/ProcessView'
 import { ToolsView } from './components/ToolsView'
 import { LearningView } from './components/LearningView'
@@ -13,9 +13,22 @@ export interface NavigateToStep {
   stepId: string
 }
 
-export default function App() {
+interface AppProps {
+  auth: {
+    SignIn: React.ComponentType<any>
+    UserButton: React.ComponentType
+    useAuth: (...args: any[]) => any
+  }
+}
+
+const supabaseConfig = {
+  url: import.meta.env.VITE_SUPABASE_URL,
+  anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+  createClient,
+}
+
+export default function App({ auth }: AppProps) {
   const [view, setView] = useState<View>('process')
-  const { theme, toggle } = useTheme()
 
   // Lifted state so Learning tab can deep-link into Process tab
   const [navTarget, setNavTarget] = useState<NavigateToStep | null>(null)
@@ -29,20 +42,55 @@ export default function App() {
   const clearNavTarget = useCallback(() => setNavTarget(null), [])
 
   return (
-    <div className="portal">
-      <Navbar view={view} onViewChange={setView} theme={theme} onThemeToggle={toggle} />
-      <main className="portal__main">
-        {view === 'process' && (
-          <ProcessView navTarget={navTarget} onNavConsumed={clearNavTarget} />
-        )}
-        {view === 'tools' && <ToolsView />}
-        {view === 'learning' && <LearningView onNavigateToStep={navigateToStep} />}
-      </main>
-      <footer className="portal-footer">
-        <span>© {new Date().getFullYear()} AIDigital Labs · Smart Tools Portal</span>
-        <span className="portal-footer__sep">·</span>
-        <span>For existing AI Labs customers</span>
-      </footer>
-    </div>
+    <AppShell
+      appTitle="Marketing Library"
+      activityLabel="Visit"
+      auth={auth}
+      supabaseConfig={supabaseConfig}
+    >
+      {() => (
+        <div className="portal">
+          <div className="portal-nav-tabs">
+            <div className="view-toggle">
+              <button
+                className={`view-toggle__btn ${view === 'process' ? 'view-toggle__btn--active' : ''}`}
+                onClick={() => setView('process')}
+              >
+                <span className="view-toggle__icon">🗺️</span>
+                <span>Process Guide</span>
+              </button>
+              <button
+                className={`view-toggle__btn ${view === 'tools' ? 'view-toggle__btn--active' : ''}`}
+                onClick={() => setView('tools')}
+              >
+                <span className="view-toggle__icon">🧰</span>
+                <span>Tool Library</span>
+              </button>
+              <button
+                className={`view-toggle__btn ${view === 'learning' ? 'view-toggle__btn--active' : ''}`}
+                onClick={() => setView('learning')}
+              >
+                <span className="view-toggle__icon">🎓</span>
+                <span>Learning</span>
+              </button>
+            </div>
+          </div>
+
+          <main className="portal__main">
+            {view === 'process' && (
+              <ProcessView navTarget={navTarget} onNavConsumed={clearNavTarget} />
+            )}
+            {view === 'tools' && <ToolsView />}
+            {view === 'learning' && <LearningView onNavigateToStep={navigateToStep} />}
+          </main>
+
+          <footer className="portal-footer">
+            <span>&copy; {new Date().getFullYear()} AIDigital Labs &middot; Smart Tools Portal</span>
+            <span className="portal-footer__sep">&middot;</span>
+            <span>For existing AI Labs customers</span>
+          </footer>
+        </div>
+      )}
+    </AppShell>
   )
 }
