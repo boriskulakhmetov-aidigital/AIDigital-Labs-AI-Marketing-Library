@@ -1,82 +1,41 @@
 /* ════════════════════════════════════════════════════════════
    AIDigital Labs — Smart Tools Portal
-   Global styles & design token bindings
-   Edit src/design-system/tokens.ts to retheme.
+   Global styles. Theme variables are injected by applyTheme().
    ════════════════════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Brand (fixed, same in both themes) ── */
+/* ── Aliases and app-specific variables ── */
 :root {
-  --brand-blue:       #0009e4;
+  /* Alias: design system uses --surface2, this app uses --surface-2 */
+  --surface-2: var(--surface2);
+  --border-hover:   rgba(174, 243, 62, 0.3);
+  --text-h:         #ffffff;
   --brand-blue-dim:   rgba(0, 9, 228, 0.10);
   --brand-blue-border:rgba(0, 9, 228, 0.25);
-  --brand-green:      #aef33e;
-  --brand-pink:       #e771de;
-  --brand-black:      #080808;
-}
-
-/* ── Dark Theme (default) ── */
-:root,
-[data-theme="dark"] {
-  --bg:             #080808;
-  --surface:        #0f0f0f;
-  --surface-2:      #1a1a1a;
-  --border:         rgba(255, 255, 255, 0.08);
-  --border-hover:   rgba(174, 243, 62, 0.3);
-  --text:           #ffffff;
-  --text-muted:     #888888;
-  --text-h:         #ffffff;
-
-  --accent:         #aef33e;
-  --accent-hover:   #95d932;
-  --accent-dim:     rgba(174, 243, 62, 0.08);
-  --accent-border:  rgba(174, 243, 62, 0.2);
-
   --yellow:         #f6ad55;
   --yellow-dim:     rgba(246, 173, 85, 0.10);
   --yellow-border:  rgba(246, 173, 85, 0.25);
-
-  --error:          #f56565;
-  --success:        #48bb78;
-
   --card-hover-shadow: 0 0 20px rgba(0, 9, 200, 0.35);
   --radius:    12px;
   --radius-sm: 8px;
 }
 
-/* ── Light Theme ── */
 [data-theme="light"] {
-  --bg:             #f1f1f1;
-  --surface:        #ffffff;
-  --surface-2:      #e8e8e8;
-  --border:         rgba(0, 0, 0, 0.1);
   --border-hover:   rgba(0, 9, 228, 0.35);
-  --text:           #080808;
-  --text-muted:     #666666;
   --text-h:         #080808;
-
-  --accent:         #0009e4;
-  --accent-hover:   #0007b5;
-  --accent-dim:     rgba(0, 9, 228, 0.06);
-  --accent-border:  rgba(0, 9, 228, 0.2);
-
   --yellow:         #d97706;
   --yellow-dim:     rgba(217, 119, 6, 0.08);
   --yellow-border:  rgba(217, 119, 6, 0.2);
-
-  --error:          #d93025;
-  --success:        #16a34a;
-
   --card-hover-shadow: 0 0 20px rgba(0, 9, 200, 0.15);
 }
 
 /* ── Base ── */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+  font-family: var(--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: var(--font-size-base, 15px);
+  line-height: var(--line-height, 1.6);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
@@ -98,7 +57,7 @@ a { color: inherit; text-decoration: none; }
   height: 32px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--surface-2);
+  background: var(--surface2, var(--surface-2));
   color: var(--text-muted);
   display: flex;
   align-items: center;
