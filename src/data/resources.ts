@@ -18,7 +18,7 @@ export const RESOURCES: Resource[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🔍',
-    url: 'https://website-audit.apps.aidigitallabs.com/',
+    url: 'https://websiteaudit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -30,7 +30,7 @@ export const RESOURCES: Resource[] = [
     category: 'Audit & Analysis',
     status: 'live',
     icon: '🧠',
-    url: 'https://neuromarketing-audit.apps.aidigitallabs.com/',
+    url: 'https://neuromarketing.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -42,7 +42,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '👥',
-    url: 'https://synthetic-focus-group.apps.aidigitallabs.com/',
+    url: 'https://syntheticfocusgroup.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -64,7 +64,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '🤖',
-    url: 'https://aio-optimization.apps.aidigitallabs.com/',
+    url: 'https://aiooptimization.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -76,7 +76,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '💡',
-    url: 'https://ideation-toolkit.apps.aidigitallabs.com/',
+    url: 'https://ideationtoolkit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -88,7 +88,7 @@ export const RESOURCES: Resource[] = [
     category: 'Creative & Ideation',
     status: 'live',
     icon: '🎨',
-    url: 'https://ideation-toolkit.apps.aidigitallabs.com/',
+    url: 'https://ideationtoolkit.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {
@@ -100,7 +100,7 @@ export const RESOURCES: Resource[] = [
     category: 'AI Research',
     status: 'live',
     icon: '✏️',
-    url: 'https://prompt-engineer.apps.aidigitallabs.com/',
+    url: 'https://promptengineer.apps.aidigitallabs.com/',
     actionLabel: 'Open Tool',
   },
   {

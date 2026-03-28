@@ -1,6 +1,6 @@
 # Marketing Library
 
-> **URL:** https://marketing-library.apps.aidigitallabs.com
+> **URL:** https://library.apps.aidigitallabs.com
 > **Repo:** `boriskulakhmetov-aidigital/AIDigital-Labs-AI-Marketing-Library`
 
 The Marketing Library is a customer-facing portal that provides marketing processes, tool references, and learning resources. It is a static content portal with no AI agents, no Netlify Functions, and no dedicated database tables. Content is defined in static TypeScript data files.
