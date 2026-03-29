@@ -13,7 +13,7 @@ The Marketing Library is a customer-facing portal that provides marketing proces
 | Auth | Clerk (@clerk/clerk-react) |
 | Database | Supabase (user init only, no app-specific tables) |
 | Hosting | Netlify |
-| Design System | @boriskulakhmetov-aidigital/design-system ^7.4.0 |
+| Design System | @boriskulakhmetov-aidigital/design-system ^7.29.1 |
 
 ## Architecture
 
