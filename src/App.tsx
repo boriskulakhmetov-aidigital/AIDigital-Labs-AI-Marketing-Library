@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { AppShell } from '@boriskulakhmetov-aidigital/design-system'
+import { AppShell } from '@AiDigital-com/design-system'
 import { createClient } from '@supabase/supabase-js'
 import { ProcessView } from './components/ProcessView'
 import { ToolsView } from './components/ToolsView'

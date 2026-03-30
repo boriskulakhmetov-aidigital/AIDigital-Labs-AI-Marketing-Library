@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ClerkProvider, SignIn, UserButton, useAuth } from '@clerk/clerk-react'
-import { applyTheme, aiLabsTheme } from '@boriskulakhmetov-aidigital/design-system'
-import '@boriskulakhmetov-aidigital/design-system/style.css'
+import { applyTheme, aiLabsTheme } from '@AiDigital-com/design-system'
+import '@AiDigital-com/design-system/style.css'
 import App from './App'
 import './index.css'
 
